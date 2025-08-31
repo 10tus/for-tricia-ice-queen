@@ -32,7 +32,7 @@
 
 .question-wrapper{
     display: flex;
-    font-size: 100px;
+    font-size: 70px;
     letter-spacing: 2px;
     flex-direction: column;
     justify-content: center;
