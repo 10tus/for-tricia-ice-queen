@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Tricia Jules, The Ice Queen</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="question-wrapper">
+                <div class="question-wrapper-inner">
+                    <span class="i-span">I</span>
+                    <span>ce cream with me?</span>
+                    <img src="https://assets.unileversolutions.com/v1/124823375.png" alt="ice-cream" class="ice-cream-img">
+                </div>
+                <img src="https://assets.unileversolutions.com/v1/124823375.png" alt="ice-cream-small" class="ice-cream-img-mobile">
+                <div style="display: flex; gap: 20px; padding: 0px 0px 50px 0px; justify-content: center; align-items: center;">
+                    <button id="yes-btn" class="maangas-button" style="font-size: 50px;">Yes</button>
+                    <button id="no-btn" class="maangas-button" style="background-color: white !important; color: black; font-size: 50px;">No</button>
+                </div>
+                <div id="answer-container" style="max-width: 800px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; overflow: visible; align-items:center;"></div>
+            </div>
+            <div class="main-wrapper">
+                <div class="you-wrapper">
+                    <div style="font-size: 50px;">
+                        <span>You:</span>
+                    </div>
+                    <img 
+                    src="https://i.pinimg.com/originals/8f/b5/d8/8fb5d805615e21af8f5cd5a18755526b.gif" 
+                    alt="you-somehow"
+                    class="you-img">
+                </div>
+                
+                <div class="me-wrapper">
+                    <div style="font-size: 50px;">
+                        <span>Me:</span>
+                    </div>
+                    <img 
+                    src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHQzc3h1cGd6NWgzc3pzOXpuZ291NXpzc3hrNmx4eTZ0dWx5cHNqbiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/5uALZbY4nMHGU/giphy.gif" 
+                    alt="me-somehow"
+                    style="transform: scaleX(-1);"
+                    class="me-img">
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </body>
+
+    <script>
+        const noBtn = document.getElementById("no-btn");
+        const yesBtn = document.getElementById("yes-btn");
+        const answer = document.getElementById("answer-container");
+        let instance = 0;
+        const pleaseVariants = [
+            "Please 🙏",
+            "Por favor 🙏",
+            "Pakiusap 🙏",
+            "Please lang 🙏",
+            "お願いします 🙏",
+            "부탁합니다  🙏",
+        ];
+
+        
+
+        noBtn.addEventListener("click", () => {
+            const count = Math.floor(Math.random() * 5);
+            const span = document.createElement("span");
+            span.textContent = pleaseVariants[count];
+            span.style.fontSize = "30px";
+            span.style.textAlign = "center";
+            span.style.color = "red";
+            answer.appendChild(span);
+            instance++;
+
+            if (instance >= 10) {
+                noBtn.disabled = true;
+                noBtn.style.pointerEvents = "none"; // extra safety
+                noBtn.style.opacity = "0.5"; // optional visual feedback
+            }
+        });
+
+        
+
+        yesBtn.addEventListener("click", () => {
+            fetch("https://docs.google.com/forms/d/e/1FAIpQLScNJcidALgX8_2NzDE-BZobog2VvTbbbQcZMfrkJtaapBPmKw/formResponse", {
+                method: "POST",
+                body: new URLSearchParams({
+                "entry.394225593": "Yes sabi ni tricia jules ice queen"
+                }),
+                mode: "no-cors"
+            });
+            alert("Thanks for clicking YES!");
+        });
+    </script>
+</html>

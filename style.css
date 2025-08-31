@@ -1,0 +1,225 @@
+.container{
+    width: 100%;
+    height: 100dvh;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.you-wrapper, .me-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.main-wrapper{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height:100%;
+    width: 100%;
+    gap: 20px;
+}
+
+.i-span{
+    font-family: 'Affair'; 
+    font-size:200px; 
+    margin-right: 10px;
+}
+
+.question-wrapper{
+    display: flex;
+    font-size: 150px;
+    letter-spacing: 2px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;;
+}
+
+.question-wrapper-inner{
+    display: flex; 
+    padding: 50px 0px 0px 0px; 
+    justify-content: center; 
+    align-items: center
+}
+
+.maangas-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 169px;
+  height: 60px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  border: 3px solid #fff;
+  outline: 3px solid #000;
+  box-shadow: 6px 6px 0 #00a4ef;
+  transition: all 0.1s ease-out;
+  padding: 0 15px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.you-img, .me-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ice-cream-img{
+    width: 500px;
+    height: auto;
+}
+.ice-cream-img-mobile{
+    width: 300px;
+    height: auto;
+    display: none;
+}
+
+
+/* Mobile breakpoint */
+@media (max-width: 1440px) {
+ .main-wrapper{
+    flex-direction: column;
+ }
+
+ .question-wrapper{
+    font-size: 30px;
+ }
+
+ .question-wrapper-inner{
+    gap: 10px;
+ }
+
+ .you-img, .me-img{
+    max-width: 700px;
+    max-height: 700px;
+    width: 100%;
+    height: 100%;
+ }
+ .ice-cream-img{
+    display: none;
+}
+ .ice-cream-img-mobile{
+    display: block;
+}
+ .i-span{
+    font-size: 100px;
+ }
+
+}
+
+.maangas-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  z-index: 1;
+  transition: none;
+  /* Initially hide the pseudo-element */
+  opacity: 0;
+}
+
+@keyframes slide {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.maangas-button:hover::before {
+  /* Show the pseudo-element on hover */
+  opacity: 1;
+  animation: slide 2s infinite;
+}
+
+.maangas-button:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0 #000;
+  background-color: #000;
+  color: #fff;
+}
+
+@keyframes slide {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.maangas-button:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0 #00a4ef;
+  background-color: #fff;
+  color: #000;
+  border-color: #000;
+}
+
+.button-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  transition: transform 0.2s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+.maangas-button:hover .button-text {
+  transform: skew(-5deg);
+}
+
+.maangas-button:active .button-text {
+  transform: skew(5deg);
+}
+
+.button-text span:first-child {
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.button-text span:last-child {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+
+@font-face {
+  font-family: "Overused";
+  src: 
+       url("fonts/overused-bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Affair";
+  src: 
+       url("fonts/Affair.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Overused", sans-serif;
+  height: auto;
+  width: auto;
+}
