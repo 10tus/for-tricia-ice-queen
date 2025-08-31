@@ -32,7 +32,7 @@
 
 .question-wrapper{
     display: flex;
-    font-size: 150px;
+    font-size: 100px;
     letter-spacing: 2px;
     flex-direction: column;
     justify-content: center;
@@ -92,7 +92,7 @@
  }
 
  .question-wrapper{
-    font-size: 30px;
+    font-size: 25px;
  }
 
  .question-wrapper-inner{
@@ -112,7 +112,7 @@
     display: block;
 }
  .i-span{
-    font-size: 100px;
+    font-size: 100px; 
  }
 
 }
